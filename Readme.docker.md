@@ -14,8 +14,15 @@ Docker, with the following changes:
 
 ## Development: Getting Started
 
+    # Set up app and database
     brew install fig
     fig run web rake db:create
     fig run web rake db:migrate
+
+    # Run tests
+    fig run web rake db:test:prepare
+    fig run web spec spec/
+
+    # Start server
     fig up
 
