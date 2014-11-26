@@ -4,8 +4,14 @@ db:
     - "5432"
 web:
   build: .
-  command: rails s
   ports:
     - "3000:3000"
+  environment:
+    RAILS_ENV: development
+    RDS_HOSTNAME: db
+    RDS_USERNAME: postgres
+    RDS_PASSWORD:
+    RDS_PORT: 5432
+    RDS_DB_NAME: postgres
   links:
     - db
